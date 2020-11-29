@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loader">
+            <div class="loading"></div>
+        </div> <!-- loader -->
+
+        <div class="header">
+            <div class="category-question">
+                <p>Category: <span id="dom-category">General Knowladge</span></p>
+                <p>Question: <span id="dom-question">1/2</span></p>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div> <!-- progress -->
+            </div> <!-- category-question -->
+
+            <div class="difficulty-score">
+                <p>Difficulty: <span id="dom-difficulty">Easy</span></p>
+                <p>Score:</p>
+                <p id="dom-score">0</p>
+            </div> <!-- difficulty-score -->
+        </div> <!-- header -->
+
+        <div class="question">
+            <h1 id="dom-question-name">What is this quiz?</h1>
+
+            <div class="options">
+                <div class="option">
+                    <p class="option-num">A</p>
+                    <p class="option-text" data-number="1">Answer 1</p>
+                </div> <!-- option -->
+
+                <div class="option">
+                    <p class="option-num">B</p>
+                    <p class="option-text" data-number="2">Answer 2</p>
+                </div> <!-- option -->
+                <div class="option">
+                    <p class="option-num">C</p>
+                    <p class="option-text" data-number="3">Answer 3</p>
+                </div> <!-- option -->
+                <div class="option">
+                    <p class="option-num">D</p>
+                    <p class="option-text" data-number="4">Answer 4</p>
+                </div> <!-- option -->
+            </div> <!-- options -->
+
+            <div class="giveUp">
+                <a href="/Quiz-Game-API/end.html" class="btn">Quit</a>
+                <button class="btn" onclick="nextQuestion()" id="skip">Skip Question</button>
+            </div> <!-- giveUp -->
+
+        </div> <!-- question -->
+    </div> <!-- container -->
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>

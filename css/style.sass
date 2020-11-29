@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap')
+
+@mixin inspect()
+    border: 1px solid red
+@mixin transition()
+    transition: 0.2s linear
+
+$main-color: #24a053
+$alert-color: #f81717d5
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+body
+    font-family: 'Poppins', sans-serif
+
+a
+    display: inline-block
+    text-decoration: none
+input, select, button
+    font-family: 'Poppins', sans-serif
+    outline: none
+    background: transparent
+    // border: none
+
+.container
+    width: 100%
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-top: 3rem
+    padding-left: 2rem
+    padding-right: 2rem
+    margin: 0 auto
+    max-width: 700px
+    // min-width: 300px
+    // max-width: 600px
+    // @include inspect()
+
+    h1
+        color: $main-color
+        margin-bottom: 1rem
+    .alert
+        visibility: hidden
+        color: $alert-color
+
+    #form
+        display: flex
+        flex-direction: column
+        width: 400px
+        &>*
+            margin: 0.5rem 0
+            width: 100%
+            display: block
+            font-size: 1.05rem
+            border: 1px solid $main-color
+            border-radius: 5px
+            padding: 0.5rem 1rem
+        button
+            color: $main-color
+            font-weight: bold
+            cursor: pointer
+            @include transition()
+            &:hover
+                box-shadow: inset 0 0 5px #13a12680, 0 0 5px #13a12680
+    .btn
+        width: 400px
+        text-align: center
+        font-size: 1.05rem
+        margin-top: 1.5rem
+        padding: 0.5rem 1rem
+        color: $main-color
+        border: 1px solid $main-color
+        border-radius: 5px
+        font-weight: bold
+        box-shadow: 0 0 2px #13a12680
+        @include transition()
+        &:hover
+            box-shadow: inset 0 0 5px #13a12680, 0 0 5px #13a12680
+
+    .header
+        display: flex
+        justify-content: space-between
+        width: 100%
+        div
+            p:nth-child(1)
+                color: $main-color
+                font-size: 1.3rem
+                font-weight: bold
+                margin-bottom: 1rem
+            p:nth-child(2)
+                font-size: 1.05rem
+            p:nth-child(3)
+                font-size: 2rem
+                color: $main-color
+                font-weight: bold
+        .category-question
+            .progress
+                display: block
+                width: 200px
+                height: 30px
+                display: flex
+                overflow: hidden
+                border: 1px solid $main-color
+                margin-top: 1rem
+                &-bar
+                    width: 50%
+                    height: 100%
+                    background: $main-color
+        .difficulty-score
+            text-align: right
+    .question
+        margin-top: 2rem
+        width: 100%
+        h1
+            text-align: center
+        .options
+
+            .option
+                display: flex
+                margin: 1.2rem 0
+                box-shadow: 0 0 5px rgba(0,0,0,0.3)
+                font-size: 1.1rem
+                &:hover
+                    box-shadow: 0 0 8px rgba(0,0,0,0.5)
+
+                &>*
+                    padding: 0.5rem
+                p:nth-child(1)
+                    text-align: center
+                    flex: 1 1 7%
+                    color: #ffffff
+                    background: $main-color
+                p:nth-child(2)
+                    cursor: pointer
+                    flex: 1 1 100%
+                    padding-left: 1rem
+                .correct
+                    background: lighten($main-color,15%)
+                .incorrect
+                    background: $alert-color
+        .giveUp
+            display: flex
+            align-items: center
+            justify-content: space-between
+            .btn
+                width: auto
+            #skip
+                cursor: pointer
+
+    table
+        border-collapse: collapse
+        width: 100%
+        text-align: center
+        th
+            background: $main-color
+        th, td
+            padding: 5px
+        th, td
+            border: 1px solid rgba(0,0,0,0.2)
+        tr:nth-child(odd)
+            background: lighten( $main-color, 50%)
+
+.loader
+    position: absolute
+    background: #ffffff
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    // max-width: none
+    display: flex
+    justify-content: center
+    align-items: center
+    .loading
+        width: 100px
+        height: 100px
+        border: 10px solid #000
+        border-color: $main-color transparent $main-color transparent
+        border-radius: 50%
+        animation: spin 1.2s linear infinite
+        // background: $main-color
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)

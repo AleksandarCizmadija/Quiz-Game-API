@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quiz Game App</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Quiz Game App</h1>
+
+        <p class="alert">Please check all fields</p>
+        <form id="form">
+            <input type="number" id="number-of-questions" min="1" max="20"
+                placeholder="Please enter number of questions" autofocus>
+
+            <select id="select-category">
+                <option disabled selected value="default">Please select category</option>
+            </select>
+
+            <select id="select-difficulty">
+                <option disabled selected value="default">Please select difficulty</option>
+            </select>
+
+            <button type="submit">Play</button>
+        </form>
+
+    </div> <!-- container -->
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
